@@ -1,9 +1,9 @@
 package ado_app.Frontend;
 
-import ado_app.BackEnd.Tracks;
-import ado_app.BackEnd.Songs;
-import ado_app.BackEnd.EventButtons;
-import ado_app.BackEnd.ImagenResized;
+import ado_app.Backend.Tracks;
+import ado_app.Backend.Songs;
+import ado_app.Backend.EventButtons;
+import ado_app.Backend.ImagenResized;
 
 import javax.swing.*;
 import java.awt.*;

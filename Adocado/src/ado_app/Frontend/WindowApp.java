@@ -1,6 +1,6 @@
 package ado_app.Frontend;
 
-import ado_app.BackEnd.Tracks;
+import ado_app.Backend.Tracks;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -52,3 +52,4 @@ public class WindowApp extends JFrame{
         } catch (Exception ignored) { }
     }
 }
+

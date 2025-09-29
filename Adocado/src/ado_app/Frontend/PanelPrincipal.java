@@ -34,7 +34,7 @@ public class PanelPrincipal extends JPanel {
     }
 
     private void getButtons() {
-        JButton btActivate = new JButton("Reproducir");
+        JButton btActivate = new JButton("Play");
         btActivate.setFont(new Font("Arial", Font.BOLD, 12));
         btActivate.setBackground(new Color(70, 130, 180));
         btActivate.setForeground(Color.WHITE);
@@ -80,3 +80,4 @@ public class PanelPrincipal extends JPanel {
 
     }
 }
+

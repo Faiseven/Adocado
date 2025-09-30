@@ -6,7 +6,7 @@ public class AppLauncher {
 
     static {
         try {
-            // Makes the app look morden.
+            // Makes the app look modern and prettier.
             UIManager.setLookAndFeel(new com.formdev.flatlaf.FlatDarkLaf());
         } catch (UnsupportedLookAndFeelException ignored) {}
     }

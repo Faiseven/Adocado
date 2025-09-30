@@ -6,18 +6,21 @@ import ado_app.Backend.EventButtons;
 import ado_app.Backend.ImagenResized;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class PanelPrincipal extends JPanel {
 
     // If each button starts its own instance, the music wouldn't be coordinated.
-    // Besides, the listeners and adapters always have 'new'.
     // Right here we use instance, since we create an ActionListener instance.
-    private final ActionListener ebo = new EventButtons();
+    private final ActionListener Evbu = new EventButtons();
+
+    // Initializes the font that will be used in the buttons.
+    private final Font font = new Font("Arial", Font.BOLD, 12);
 
     public PanelPrincipal() {
-        if (!Songs.getPlayList().isEmpty()) { // If it is not empty the app loads the song once it has started.
+        if (!Songs.getPlayList().isEmpty()) {
             Tracks.loadSong(Songs.getSong(0));
         }
 
@@ -30,28 +33,29 @@ public class PanelPrincipal extends JPanel {
 
     private void getPanel() {
         setLayout(null);
-        setBackground(new Color(30, 30, 30));
+        setBackground(new Color(25, 25, 25));
     }
 
     private void getButtons() {
+
         JButton btActivate = new JButton("Play");
-        btActivate.setFont(new Font("Arial", Font.BOLD, 12));
+        btActivate.setFont(font);
         btActivate.setBackground(new Color(70, 130, 180));
         btActivate.setForeground(Color.WHITE);
         btActivate.setBounds(100, 310, 100, 40);
-        btActivate.addActionListener(ebo);
+        btActivate.addActionListener(Evbu);
         add(btActivate);
 
         JButton btLeft = new JButton("<");
-        btLeft.setFont(new Font("Arial", Font.BOLD, 12));
+        btLeft.setFont(font);
         btLeft.setBackground(new Color(75, 0, 130));
         btLeft.setForeground(Color.WHITE);
         btLeft.setBounds(55, 310, 40, 40);
-        btLeft.addActionListener(ebo);
+        btLeft.addActionListener(Evbu);
         add(btLeft);
 
         JButton btRight = new JButton(">");
-        btRight.setFont(new Font("Arial", Font.BOLD, 12));
+        btRight.setFont(font);
         btRight.setBackground(new Color(75, 0, 130));
         btRight.setForeground(Color.WHITE);
         btRight.setBounds(205, 310, 40, 40);
@@ -60,12 +64,12 @@ public class PanelPrincipal extends JPanel {
         // that have their own implementation (@Override) of the same method.
         // For example, the @Override of EventButton() and the @Override of an anonymous class
         // same variable, but point to different @Overrides.
-        btRight.addActionListener(ebo);
+        btRight.addActionListener(Evbu);
         add(btRight);
     }
 
     private void getTitle(){
-        JLabel Title = new JLabel("ADOCADO!");
+        JLabel Title = new JLabel("ADOCADO");
         Title.setFont(new Font("Arial", Font.BOLD, 24));
         Title.setForeground(new Color(138, 43, 226));
         Title.setBounds(80, 5, 150, 30);
@@ -75,7 +79,7 @@ public class PanelPrincipal extends JPanel {
     private void getImage(){
         JLabel Image = new JLabel();
         Image.setBounds(30, 20, 320, 300);
-        Image.setIcon(ImagenResized.resizeImage("images/AdoCado.png")); //? Send the image path, and we set the returned image.
+        Image.setIcon(ImagenResized.resizeImage("images/AdoCado.png")); // Send the image path, and we set the returned image.
         add(Image);
 
     }

@@ -12,6 +12,7 @@ public class AppLauncher {
     }
 
     public static void main(String[] args) {
+        // Faster way to call the GUI in the main thread.
         SwingUtilities.invokeLater(WindowApp::new);
     }
 }

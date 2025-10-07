@@ -22,7 +22,7 @@ public class WindowApp extends JFrame{
 
     private void setIcon() {
         try {
-            // Gets the image
+            // Gets the image for the icon app.
             URL urlIcon = getClass().getClassLoader().getResource("images/Ado-icono.png");
 
             if (urlIcon != null) {

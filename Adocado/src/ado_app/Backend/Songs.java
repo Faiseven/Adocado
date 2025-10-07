@@ -10,10 +10,10 @@ import java.util.List;
 
 public class Songs {
 
-    // ArrayList that'll save the paths (URL/String).
+    // ArrayList that'll save the paths' songs from the JSON (URL/String).
     private static List<String> playList;
 
-    // it is executed only once when loading the class, to load the songs from the JSON.
+    // Class that starts first to load the songs from the JSON.
     static {
         loadSongsFromJSON();
     }
@@ -25,30 +25,30 @@ public class Songs {
     private static void loadSongsFromJSON() {
         ObjectMapper mapper = new ObjectMapper();
 
-
+        // Gets the JSON file from resources folder (classpath).
         try (InputStream is = Songs.class.getClassLoader().getResourceAsStream("config/Songs.json")) {
             if (is == null) {
                 JOptionPane.showMessageDialog(null, "We didn't found the JSON file.", "System", JOptionPane.ERROR_MESSAGE);
             }
-            // Reads the index by index from de JSON, it returns list with all the path of the songs, which is stored in the playList.
-            playList = mapper.readValue(is, new TypeReference<>() {
-            });
+
+            // Reads the JSON file and turns it into a List of Strings.
+            playList = mapper.readValue(is, new TypeReference<>() {});
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Error reading JSON file", "System", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    // Returns list of Strings.
+    // Returns List of Strings.
     public static List<String> getPlayList() {
         return playList;
     }
 
-    // Returns list size
+    // Returns List size
     public static int size() {
         return playList.size();
     }
 
-    // Based on the index will be the song (URL/String/Path) of the song indicated in the JSON.
+    // Based on the index will return the song (String) of the song indicated by index in the JSON.
     public static String getSong(int index) {
         return playList.get(index);
     }

@@ -37,7 +37,6 @@ public class PanelPrincipal extends JPanel {
     }
 
     private void getButtons() {
-
         JButton btActivate = new JButton("Play");
         btActivate.setFont(font);
         btActivate.setBackground(new Color(70, 130, 180));
@@ -68,6 +67,7 @@ public class PanelPrincipal extends JPanel {
         add(btRight);
     }
 
+    // Set up the title label.
     private void getTitle(){
         JLabel Title = new JLabel("ADOCADO");
         Title.setFont(new Font("Arial", Font.BOLD, 24));
@@ -76,12 +76,12 @@ public class PanelPrincipal extends JPanel {
         add(Title);
     }
 
+    // Set up the image label.
     private void getImage(){
         JLabel Image = new JLabel();
         Image.setBounds(30, 20, 320, 300);
         Image.setIcon(ImagenResized.resizeImage("images/AdoCado.png")); // Send the image path, and we set the returned image.
         add(Image);
-
     }
 }
 

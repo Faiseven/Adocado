@@ -22,6 +22,7 @@ public class Tracks {
             URL soundURL = Tracks.class.getClassLoader().getResource(path);
 
             if (soundURL == null) {
+                // Show an error message if the file is not found and exit the program.
                 JOptionPane.showMessageDialog(null, "File not found", "Error", JOptionPane.ERROR_MESSAGE);
                 if(clip != null){
                     clip.close();
@@ -29,21 +30,20 @@ public class Tracks {
                 System.exit(0);
             }
 
-            //? Uses the path of the classpath.
+            // Uses the path of the classpath.
             AudioInputStream ais = AudioSystem.getAudioInputStream(soundURL);
 
             clip = AudioSystem.getClip();
             clip.open(ais);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "The song couldn't be loaded. Reset the program", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The song couldn't be loaded. Reset the program", "System Error", JOptionPane.ERROR_MESSAGE);
             if(clip != null){
                 clip.close();
             }
             System.exit(0);
         }
     }
-
 
     public static void playSong(){
         if(clip != null){
@@ -54,7 +54,7 @@ public class Tracks {
 
     public static void stopSong(){
         if(clip != null && clip.isRunning()){
-            pausedMusic = clip.getFramePosition(); // Save the current position (Do not reset).
+            pausedMusic = clip.getFramePosition(); // Save the current position (Does not reset).
             clip.stop();
         }
     }

@@ -43,7 +43,7 @@ public class WindowApp extends JFrame{
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                int opc = JOptionPane.showConfirmDialog(this, "Do you wanna close the application?", "System", JOptionPane.YES_NO_OPTION);
+                int opc = JOptionPane.showConfirmDialog(null, "Do you wanna close the application?", "System", JOptionPane.YES_NO_OPTION);
                 if(opc == JOptionPane.YES_OPTION){
                     // Stops the music and closes the application.
                     Tracks.stopSong();
@@ -57,4 +57,5 @@ public class WindowApp extends JFrame{
         setVisible(true);
     }
 }
+
 

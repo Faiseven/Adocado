@@ -9,11 +9,9 @@ import java.awt.event.ActionListener;
 public class EventButtons implements ActionListener {
 
     private int index = 0;
-    private boolean playing = false;
+    private boolean play_it = false;
 
-    public EventButtons(){
-
-    }
+    public EventButtons(){}
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -37,14 +35,14 @@ public class EventButtons implements ActionListener {
                     index --;
                     // If it goes down to -1, it returns to the last song.
                     if (index < 0) {
-                        index = Songs.size() - 1; // Array could return 10, but there would be 11 values (0-9).
+                        index = Songs.size() - 1; // Array could return 3, but there would be 4 values (0 - 3).
                     }
                     nextSong();
 
                 }
                 case ">" -> {
                     index++;
-                    // If the index is greater than or equal to (3), return to the first song in the JSON.
+                    // If the index is greater than or equal to 3, it'll return to the first song in the JSON.
                     if (index >= Songs.size()) {
                         // If you pass the last index, return to the first song.
                         index = 0;
@@ -56,12 +54,12 @@ public class EventButtons implements ActionListener {
     }
 
     private void playIt() {
-        playing = true;
+        play_it = true;
         Tracks.playSong();
     }
 
     private void stopIt() {
-        playing = false;
+        play_it = false;
         Tracks.stopSong();
     }
 
@@ -69,7 +67,7 @@ public class EventButtons implements ActionListener {
         // Send the index, and in the function return the path of the song in the specified JSON index.
         Tracks.loadSong(Songs.getSong(index)); // Abstraction, we don't care what's behind it, just knowing what it does.
         Tracks.resetSong();
-        if (playing) {
+        if (play_it) {
             Tracks.playSong();
         }
     }

@@ -4,6 +4,16 @@ Hi! This is a **Java Swing** application that uses **JSON** to load songs and **
 
 ---
 
+<p align="center">
+  <a href="https://github.com/Faiseven/Counter-JNI/stargazers"><img src="https://img.shields.io/github/stars/Faiseven/Counter-JNI?style=social" alt="GitHub stars"></a>
+  <a href="https://github.com/Faiseven/Counter-JNI/network/members"><img src="https://img.shields.io/github/forks/Faiseven/Counter-JNI?style=social" alt="GitHub forks"></a>
+  <a href="https://www.formdev.com/flatlaf/"><img src="https://img.shields.io/badge/FlatLaf-UI-blue" alt="FlatLaf"></a>
+  <img src="https://img.shields.io/badge/Java-17+-green" alt="Java 17+">
+  <img src="https://img.shields.io/badge/IntelliJ-IDEA-orange" alt="IntelliJ IDEA">
+</p>
+
+---
+
 ## ⚡ Requirements
 
 - **Java 17+**  

@@ -1,6 +1,6 @@
 # 💜 AdoApp
 
-This is a **Java Swing** application that uses **JSON** to load songs and **FlatLaf** for the **FlatDark theme**.
+Hi! This is a **Java Swing** application that uses **JSON** to load songs and **FlatLaf** for the **FlatDark theme**.
 
 ---
 
